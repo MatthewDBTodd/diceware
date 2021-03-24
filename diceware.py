@@ -2,6 +2,7 @@
 
 from secrets import choice
 from sys import argv
+from decimal import Decimal
 
 path = 'eff_large_wordlist.txt'
 
@@ -45,6 +46,9 @@ def main():
         print(str(diceroll) + ' --> ' + word)
         words += word + ' '
     print('\nYour words are: ' + words + '\n')
+    print('There are a total of {:.2e} possible passwords\n'
+            .format(Decimal(len(wordlist)**n)))
+
 
 if __name__ == "__main__":
     main()
